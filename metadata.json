@@ -1,0 +1,8 @@
+{
+  "name": "Remix Ghosts of the Void",
+  "description": "An interactive space archaeology experience exploring the historic robotic machines left behind on Mars and the Moon.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

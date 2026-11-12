@@ -1,0 +1,1204 @@
+# MASTER PROJECT EXECUTION PROMPT
+# GHOSTS OF THE VOID — INTERACTIVE SPACE ARCHAEOLOGY EXPERIENCE
+
+## 1. YOUR ROLE
+
+Act as a senior full-stack software engineer, frontend architect, UI/UX designer, creative developer, game-design engineer, and QA specialist.
+
+Your task is to BUILD AND DELIVER a complete, polished, fully functional, production-quality interactive website named:
+
+**GHOSTS OF THE VOID**
+
+Subtitle: An Interactive Space Archaeology Experience.
+
+This project was originally planned as a 16-screen interactive Figma prototype for a NASA Space Apps project. Due to time constraints, we are moving directly to a functional website.
+
+You are responsible for converting the entire original concept into a working web application.
+
+### NON-NEGOTIABLE REQUIREMENTS
+
+1. Every screen, feature, button, interaction, and navigation path described in this specification must be implemented.
+2. Do not omit features to save development time.
+3. Do not create a static landing page and pretend the project is complete.
+4. Do not leave buttons that do nothing.
+5. Do not use placeholder links for the NASA archives.
+6. Do not leave unfinished sections, dummy cards, empty routes, or TODO comments.
+7. The quiz, exploration tracking, achievements, mission log, and certificate must actually work.
+8. The website must be responsive on desktop, tablets, and smartphones.
+9. The final application must run locally without requiring paid APIs or API keys.
+10. Prioritize working functionality, visual quality, performance, and reliability.
+
+**You must inspect the existing project directory before changing anything.** Preserve existing useful code and dependencies. If the project is empty, initialize a suitable application yourself.
+
+Do not stop after providing a plan. Implement the actual project, run it, inspect it, fix errors, and verify the completed experience.
+
+---
+
+# 2. PROJECT CONCEPT
+
+Ghosts of the Void is an interactive space archaeology experience that allows visitors to explore historic human-made machines and artifacts left behind on Mars and the Moon.
+
+These machines represent humanity's technological achievements and scientific exploration.
+
+The visitor should feel like a space archaeologist discovering the remains of humanity's greatest space missions.
+
+The experience has two main exploration worlds:
+
+**WORLD 01 — MARS**
+- Spirit Rover
+- Opportunity Rover
+- InSight Lander
+- Ingenuity Helicopter
+
+**WORLD 02 — THE MOON**
+- Apollo 11 Descent Stage
+- Surveyor 3
+- Apollo Lunar Roving Vehicle
+
+Total: 2 worlds, 7 relics, 1 shared human legacy.
+
+The website must guide visitors through this experience:
+
+Launchpad → Command Hub → Select World → Explore Relics → Discover Historical Stories → Take Knowledge Quiz → Unlock Achievements → Mission Log → Certificate.
+
+---
+
+# 3. TECHNOLOGY STACK
+
+Use the following stack unless the existing project already has an equivalent, working architecture:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide React icons
+- Framer Motion for animations
+- LocalStorage for persistent progress and achievements
+
+Use reusable components, a clean component architecture, and centralized data structures for relics, milestones, quiz questions, achievements, and navigation.
+
+Avoid unnecessary backend complexity. The application must work without user authentication, paid services, or secret API keys.
+
+If an existing backend is already configured, preserve it where useful.
+
+---
+
+# 4. VISUAL IDENTITY AND DESIGN SYSTEM
+
+Create a premium, immersive, cinematic space-exploration interface.
+
+The design should look like a combination of:
+- NASA mission control interfaces
+- Premium science documentary websites
+- Futuristic space exploration terminals
+- High-quality interactive museum exhibitions
+
+Avoid generic SaaS dashboard aesthetics.
+
+## Color palette
+
+Use these colors consistently:
+
+| Name | Hex |
+|---|---|
+| Deep Space Obsidian | #060814 |
+| Nebula Surface | #101827 |
+| Mars Amber | #FF5722 |
+| Lunar Silver | #C9D3E0 |
+| Cosmic Cyan | #69D9FF |
+| Starlight White | #F4F6FA |
+| Muted Text | #A7B2C5 |
+| Panel Border | #26344A |
+| Success Green | #45D483 |
+| Warning Amber | #FFC857 |
+
+Mars sections should use orange/red accents.
+
+Lunar sections should use silver, pale blue, and cosmic cyan accents.
+
+The overall interface must retain a consistent dark-space aesthetic.
+
+## Typography
+
+Use:
+- Space Grotesk for major headings and display titles.
+- Inter for body text, descriptions, statistics, and interface labels.
+
+## Design characteristics
+
+Implement:
+- Full-width cinematic backgrounds.
+- Beautiful NASA space photography.
+- Subtle starfield backgrounds.
+- Nebula gradients.
+- Glass-like interface panels where appropriate.
+- Soft shadows.
+- Thin illuminated borders.
+- Elegant hover states.
+- Smooth page transitions.
+- Subtle scrolling animations.
+- Animated counters.
+- Progress indicators.
+- Responsive card layouts.
+- Custom loading states.
+- Consistent spacing and alignment.
+
+Use animation carefully. The interface should feel premium, not distracting.
+
+Respect reduced-motion preferences.
+
+Do not compromise readability or usability for visual effects.
+
+---
+
+# 5. WEBSITE ARCHITECTURE AND ALL REQUIRED SCREENS
+
+Implement every screen below as a real, functional route or state.
+
+Suggested routes:
+
+- /
+- /destinations
+- /archive/mars
+- /archive/lunar
+- /relic/spirit-rover
+- /relic/opportunity-rover
+- /relic/insight-lander
+- /relic/ingenuity-helicopter
+- /relic/apollo-11-descent-stage
+- /relic/surveyor-3
+- /relic/lunar-roving-vehicle
+- /quiz
+- /quiz/correct
+- /quiz/incorrect
+- /mission-log
+- /certificate
+
+You may use a cleaner routing architecture, but all these experiences must be accessible.
+
+## SCREEN 01 — LAUNCHPAD / HOMEPAGE
+
+Route: /
+
+Build a visually impressive landing page.
+
+### Header
+
+Create a reusable navigation bar approximately 76px tall.
+
+Left side:
+GHOSTS OF THE VOID
+
+Right side:
+- EXPLORE
+- THE ARCHIVE
+- MISSION LOG
+
+Header requirements:
+- Responsive desktop navigation.
+- Mobile navigation menu.
+- Sticky navigation when appropriate.
+- Functional navigation links.
+- Subtle backdrop blur.
+- Hover animations.
+
+### Hero section
+
+Use a cinematic NASA space image as the background.
+
+Add a dark overlay to ensure text readability.
+
+Eyebrow:
+AN INTERACTIVE SPACE ARCHAEOLOGY EXPERIENCE
+
+Main heading:
+THE MACHINES WE LEFT BEHIND.
+
+Supporting text:
+Explore the forgotten machines, technological achievements, and scientific discoveries that continue to tell humanity's story across Mars and the Moon.
+
+Primary CTA:
+🚀 BOARD THE RUST & EXPLORE
+
+This button must navigate to the Command Hub.
+
+Display a statistics row:
+
+02 WORLDS
+
+07 SPACE RELICS
+
+01 SHARED LEGACY
+
+Use subtle count-up animations.
+
+Add a visually attractive scroll indicator.
+
+---
+
+## SCREEN 02 — COMMAND HUB / DESTINATION SELECTOR
+
+Route: /destinations
+
+Heading:
+SELECT YOUR DESTINATION.
+
+Present two large interactive destination cards.
+
+### CARD 1 — MARS SECTOR
+
+Use authentic Mars surface imagery.
+
+Accent: Mars Amber (#FF5722).
+
+Badge:
+04 HISTORICAL MACHINES
+
+Title:
+THE RED PLANET
+
+Description:
+A world of dust, ancient geological mysteries, robotic pioneers, and machines that transformed our understanding of Mars.
+
+CTA:
+ENTER MARS ARCHIVE →
+
+Navigate to /archive/mars.
+
+### CARD 2 — LUNAR SECTOR
+
+Use authentic lunar surface imagery.
+
+Accent: Lunar Silver (#C9D3E0).
+
+Badge:
+03 HISTORICAL ARTIFACTS
+
+Title:
+THE SILENT MOON
+
+Description:
+Explore the hardware, landing systems, and engineering achievements that made humanity's lunar exploration possible.
+
+CTA:
+ENTER LUNAR ARCHIVE →
+
+Navigate to /archive/lunar.
+
+Make the cards responsive, animated, and visually distinct.
+
+---
+
+## SCREEN 03 — MARS ARCHIVE
+
+Route: /archive/mars
+
+Heading:
+THE RED PLANET ARCHIVE.
+
+Subtitle:
+Four machines. One extraordinary legacy of exploration.
+
+Display four reusable relic cards in a responsive grid.
+
+### RELIC 01 — SPIRIT ROVER
+
+Status badge:
+FEATURED EXPLORATION
+
+Description:
+The robotic geologist that helped reveal evidence of ancient water and transformed our understanding of the Martian environment.
+
+CTA:
+EXPLORE RELIC →
+
+Route:
+/relic/spirit-rover
+
+### RELIC 02 — OPPORTUNITY ROVER
+
+Description:
+The long-lived Mars exploration rover that dramatically exceeded its planned mission and discovered compelling evidence of past water activity.
+
+Route:
+/relic/opportunity-rover
+
+### RELIC 03 — INSIGHT LANDER
+
+Description:
+The stationary geophysical lander designed to investigate Mars' interior, seismic activity, and internal structure.
+
+Route:
+/relic/insight-lander
+
+### RELIC 04 — INGENUITY HELICOPTER
+
+Description:
+The experimental rotorcraft that demonstrated powered, controlled flight on another planet.
+
+Route:
+/relic/ingenuity-helicopter
+
+Every card must contain:
+- Relevant imagery.
+- Relic name.
+- Mission category/status.
+- Concise description.
+- Functional exploration link.
+- Hover interaction.
+
+---
+
+## SCREEN 04 — LUNAR ARCHIVE
+
+Route: /archive/lunar
+
+Heading:
+THE SILENT LUNAR ARCHIVE.
+
+Subtitle:
+Humanity's engineering legacy preserved on the Moon.
+
+Create three relic cards.
+
+### RELIC 05 — APOLLO 11 DESCENT STAGE
+
+Description:
+The lunar module's descent stage remained on the Moon after the ascent stage carried astronauts back into lunar orbit.
+
+Route:
+/relic/apollo-11-descent-stage
+
+### RELIC 06 — SURVEYOR 3
+
+Description:
+An uncrewed lunar lander that helped investigate the Moon's surface and contributed to preparations for human exploration.
+
+Route:
+/relic/surveyor-3
+
+### RELIC 07 — APOLLO LUNAR ROVING VEHICLE
+
+Description:
+The battery-powered lunar rover that extended astronauts' mobility across the lunar landscape during the Apollo missions.
+
+Route:
+/relic/lunar-roving-vehicle
+
+Use Lunar Silver and Cosmic Cyan as the primary accent colors.
+
+---
+
+# 6. RELIC STORY EXPERIENCE — ALL SEVEN RELICS
+
+This is one of the most important parts of the entire project.
+
+Create a reusable, data-driven Relic Story Page component.
+
+Do not manually create seven unrelated pages.
+
+Each relic must have its own accurate content and unique identity while sharing a consistent layout.
+
+Every story page must contain:
+
+1. Breadcrumb navigation.
+2. Relic title and mission status.
+3. Large cinematic hero image.
+4. Historical introduction.
+5. Quick statistics.
+6. Four historical timeline milestones.
+7. Engineering and scientific impact section.
+8. What did this machine teach us? discovery panel.
+9. Official NASA archive button.
+10. Knowledge quiz CTA.
+11. Return to parent archive button.
+12. Mission completion control.
+
+### STORY 01 — SPIRIT ROVER
+
+Route:
+/relic/spirit-rover
+
+Breadcrumb:
+GHOSTS OF THE VOID / MARS ARCHIVE / SPIRIT ROVER
+
+Heading:
+THE LITTLE GEOLOGIST THAT KEPT GOING
+
+Status:
+SILENT EXPLORER
+
+Quick statistics:
+
+Launch: June 10, 2003
+
+Landing: January 2004
+
+Last Communication: March 22, 2010
+
+Include four historical timeline milestones covering:
+- Mission launch and journey to Mars.
+- Landing and beginning of surface exploration.
+- Major scientific discoveries and geological findings.
+- Final mission period and legacy.
+
+Discovery panel heading:
+WHAT DID THIS MACHINE TEACH US?
+
+Explain how Spirit contributed to evidence that Mars was once much wetter than it is today.
+
+Official NASA archive:
+https://science.nasa.gov/mission/mer-spirit/
+
+### STORY 02 — OPPORTUNITY ROVER
+
+Route:
+/relic/opportunity-rover
+
+Heading:
+THE ROVER THAT OUTLIVED EXPECTATIONS
+
+Include its:
+- Launch and arrival.
+- Exploration of Meridiani Planum.
+- Major discoveries concerning ancient water.
+- Extended operational life and final communication.
+
+Include accurate mission statistics, a four-stage historical timeline, engineering impact, and scientific legacy.
+
+Official NASA archive:
+Find and verify the appropriate official NASA mission source.
+
+### STORY 03 — INSIGHT LANDER
+
+Route:
+/relic/insight-lander
+
+Heading:
+LISTENING TO THE HEART OF MARS
+
+Include its:
+- Launch and landing.
+- Seismic investigation.
+- Marsquake discoveries.
+- Mission completion and scientific legacy.
+
+Explain how studying seismic waves helped scientists understand the planet's interior.
+
+Include a four-stage historical timeline and mission statistics.
+
+Official NASA archive:
+Find and verify the appropriate official NASA mission source.
+
+### STORY 04 — INGENUITY HELICOPTER
+
+Route:
+/relic/ingenuity-helicopter
+
+Heading:
+THE FIRST FLIGHT ON ANOTHER WORLD
+
+Include its:
+- Development and arrival with Perseverance.
+- First powered, controlled flight on Mars.
+- Evolution from technology demonstration to extended operations.
+- Final flight and mission conclusion.
+
+Explain its significance for future aerial exploration of other worlds.
+
+Include a four-stage historical timeline and mission statistics.
+
+Official NASA archive:
+Find and verify the appropriate official NASA mission source.
+
+### STORY 05 — APOLLO 11 DESCENT STAGE
+
+Route:
+/relic/apollo-11-descent-stage
+
+Heading:
+THE FOUNDATION OF HUMANITY'S FIRST MOON LANDING
+
+Cover:
+- Apollo 11 mission launch.
+- Lunar module descent.
+- Historic lunar landing.
+- Separation of descent and ascent stages.
+
+Explain why the descent stage remained on the lunar surface.
+
+Include a four-stage historical timeline and accurate mission facts.
+
+Official NASA archive:
+Find and verify an appropriate official NASA source.
+
+### STORY 06 — SURVEYOR 3
+
+Route:
+/relic/surveyor-3
+
+Heading:
+THE MACHINE THAT PREPARED THE WAY
+
+Cover:
+- Launch and journey.
+- Soft landing on the Moon.
+- Surface investigation and sample analysis.
+- Apollo 12 astronauts' visit to the spacecraft.
+
+Explain the historical significance of Surveyor 3 and its contribution to understanding lunar surface conditions.
+
+Include a four-stage historical timeline and accurate mission facts.
+
+Official NASA archive:
+Find and verify an appropriate official NASA source.
+
+### STORY 07 — APOLLO LUNAR ROVING VEHICLE
+
+Route:
+/relic/lunar-roving-vehicle
+
+Heading:
+HUMANITY'S FIRST OFF-WORLD ROADSTER
+
+Cover:
+- Development of the lunar rover.
+- First deployment during Apollo 15.
+- Exploration during the Apollo missions.
+- Its continuing presence on the Moon.
+
+Explain its engineering design, mobility, battery-powered operation, and contribution to lunar scientific exploration.
+
+Include a four-stage historical timeline and accurate mission facts.
+
+Official NASA archive:
+Find and verify an appropriate official NASA source.
+
+### CRITICAL CONTENT ACCURACY REQUIREMENT
+
+Historical information must be factually accurate.
+
+Use official NASA sources as the primary source for mission details.
+
+Do not invent:
+- Mission dates.
+- Landing dates.
+- Scientific discoveries.
+- Mission statistics.
+- Engineering specifications.
+- Historical events.
+
+Each relic must contain four meaningful and factually accurate milestones.
+
+If network access is available, research the appropriate NASA mission pages and verify the links.
+
+Store the source URLs with the relic data so the information can be checked.
+
+If an exact historical detail cannot be verified, omit it rather than inventing it.
+
+---
+
+# 7. SCREEN 12 — TERMINAL QUIZ
+
+Route:
+/quiz
+
+Header:
+TERMINAL 01 — KNOWLEDGE CHECK
+
+Question:
+WHAT DID SPIRIT ROVER HELP SCIENTISTS UNCOVER ABOUT MARS?
+
+Display three selectable answer cards.
+
+OPTION A:
+Evidence of ancient forests covering the planet.
+
+OPTION B:
+Strong evidence that Mars was once much wetter than it is today.
+
+OPTION C:
+Proof that humans once lived on Mars.
+
+Correct answer:
+OPTION B.
+
+### FUNCTIONAL REQUIREMENTS
+
+- Options must be clickable.
+- A selected option should have an obvious visual state.
+- Prevent multiple simultaneous submissions.
+- Option B must navigate to the correct-answer experience.
+- Options A and C must navigate to the incorrect-answer experience.
+- Do not reveal the correct answer before submission.
+- Provide a clear retry path.
+- Track successful completion in persistent progress.
+
+At the bottom, add educational information cards explaining why robotic machines remain on extraterrestrial surfaces after missions.
+
+---
+
+# 8. SCREEN 13 — CORRECT ANSWER
+
+Route:
+/quiz/correct
+
+Use a success-themed interface.
+
+Highlight color:
+#45D483
+
+Heading:
+EXCELLENT WORK, SPACE EXPLORER!
+
+Achievement card:
+
+ACHIEVEMENT UNLOCKED
+
+WATER DETECTIVE
+
+Display a checkmark badge and a short explanation of the achievement.
+
+CTA:
+CLAIM MY REWARD
+
+Navigate to the Mission Log.
+
+Update the saved achievement state.
+
+The achievement must remain unlocked after refreshing or reopening the website.
+
+---
+
+# 9. SCREEN 14 — INCORRECT ANSWER
+
+Route:
+/quiz/incorrect
+
+Heading:
+NOT QUITE, SPACE EXPLORER!
+
+Hint callout:
+HINT: THINK ABOUT WATER AND ANCIENT MARTIAN ENVIRONMENTS.
+
+CTA:
+TRY AGAIN
+
+Navigate back to the quiz.
+
+The user must be able to retry until the correct answer is selected.
+
+Do not unlock the Water Detective achievement after an incorrect answer.
+
+---
+
+# 10. SCREEN 15 — MISSION LOG
+
+Route:
+/mission-log
+
+Heading:
+YOUR MISSION LOG.
+
+This must be an actual interactive progress dashboard, not a decorative screen.
+
+### Exploration progress
+
+Display:
+
+01 / 07 RELICS EXPLORED
+
+The progress bar must be dynamically calculated.
+
+Initial progress should be 0/7.
+
+As users explore relics, update the counter and progress bar.
+
+### Relic tracking
+
+Display all seven relics and their individual exploration status.
+
+Possible states:
+- Not explored.
+- Explored.
+- Mission completed.
+
+Update the status when the user visits or completes each relic.
+
+Prevent duplicate visits from increasing the total progress incorrectly.
+
+### Achievement locker
+
+Create achievement cards:
+
+**WATER DETECTIVE**
+- Unlock after successfully answering the Spirit Rover quiz.
+- Highlight: #45D483.
+
+**LUNAR PIONEER**
+- Initially locked.
+- Unlock after all three lunar relics have been explored.
+
+Provide appropriate unlocked and locked visual states.
+
+### Certificate notification
+
+Achievement title:
+CHIEF SPACE ARCHAEOLOGIST
+
+Display a notification card and a functional button:
+
+VIEW MY CERTIFICATE
+
+The certificate should become available after completing the Spirit Rover exploration.
+
+If locked, explain the requirement clearly.
+
+### Persistence
+
+Use LocalStorage to preserve:
+- Number of explored relics.
+- Individual relic exploration status.
+- Mission completion status.
+- Quiz attempts.
+- Correct quiz completion.
+- Achievement unlocks.
+- Certificate unlock status.
+- Certificate recipient name.
+
+Progress must remain after refreshing the browser.
+
+---
+
+# 11. SCREEN 16 — CERTIFICATE PREVIEW
+
+Route:
+/certificate
+
+Build an elegant, printable certificate.
+
+The certificate should have:
+
+- Approximately 900 × 600 proportions.
+- Light background: #F4F6FA.
+- Double thin navy/gold border.
+- Elegant typography.
+- Professional certificate styling.
+- Subtle space-themed decorative elements.
+
+Main heading:
+CERTIFICATE OF EXPLORATION
+
+Awarded title:
+CHIEF SPACE ARCHAEOLOGIST
+
+Supporting text:
+For successfully completing the exploration of the Spirit Rover and uncovering the scientific legacy of humanity's robotic exploration of Mars.
+
+### Recipient personalization
+
+Include an editable recipient-name field.
+
+Allow the visitor to personalize the certificate.
+
+Store the recipient name in LocalStorage.
+
+Display the entered name on the actual certificate.
+
+Default to:
+SPACE EXPLORER
+
+### Certificate controls
+
+Provide:
+
+- PRINT CERTIFICATE
+- RETURN TO MISSION LOG
+
+Implement actual browser printing with a dedicated print stylesheet.
+
+During printing, hide website navigation, buttons, and unnecessary interface elements.
+
+Ensure the certificate prints cleanly without cutting off the borders or text.
+
+If practical, also provide a downloadable PDF option using a reliable client-side method without requiring a paid service.
+
+---
+
+# 12. NAVIGATION AND INTERACTION REQUIREMENTS
+
+Every interaction must work.
+
+Implement these connections:
+
+### Core journey
+
+Launchpad → Command Hub.
+
+Command Hub → Mars Archive.
+
+Command Hub → Lunar Archive.
+
+Mars Archive → Spirit Rover Story.
+
+Mars Archive → Opportunity Rover Story.
+
+Mars Archive → InSight Lander Story.
+
+Mars Archive → Ingenuity Helicopter Story.
+
+Lunar Archive → Apollo 11 Descent Stage Story.
+
+Lunar Archive → Surveyor 3 Story.
+
+Lunar Archive → Lunar Roving Vehicle Story.
+
+### Story pages
+
+Every story page must contain working actions:
+
+EXPLORE THE OFFICIAL NASA ARCHIVE → opens the correct verified external NASA source in a new tab.
+
+TEST YOUR SPACE KNOWLEDGE → opens the quiz.
+
+← RETURN TO MARS ARCHIVE → returns to the Mars archive.
+
+← RETURN TO LUNAR ARCHIVE → returns to the Lunar archive.
+
+MARK MISSION COMPLETE → updates completion tracking.
+
+Use the appropriate parent archive for each relic.
+
+### Quiz branching
+
+Quiz option B → Correct Answer.
+
+Quiz options A and C → Try Again.
+
+Try Again → Quiz.
+
+Correct Answer → Mission Log.
+
+### Mission Log
+
+VIEW MY CERTIFICATE → Certificate.
+
+### Certificate
+
+RETURN TO MISSION LOG → Mission Log.
+
+### Global navigation
+
+EXPLORE → Command Hub.
+
+THE ARCHIVE → Archive/destination experience.
+
+MISSION LOG → Mission Log.
+
+Provide working back navigation where appropriate.
+
+Do not create dead ends.
+
+---
+
+# 13. REUSABLE COMPONENT ARCHITECTURE
+
+Create reusable components such as:
+
+- Navbar
+- MobileNavbar
+- Footer
+- PrimaryButton
+- SecondaryButton
+- StatusBadge
+- DestinationCard
+- RelicCard
+- RelicGrid
+- RelicStoryLayout
+- Breadcrumb
+- QuickStats
+- TimelineMilestone
+- DiscoveryPanel
+- QuizOption
+- AchievementCard
+- MissionProgress
+- RelicProgressCard
+- Certificate
+- LoadingScreen
+- ScrollToTop
+- PageTransition
+
+Create a centralized data structure for all seven relics.
+
+Each relic should have:
+- Unique ID.
+- Name.
+- Slug.
+- World.
+- Status.
+- Short description.
+- Full introduction.
+- Hero image.
+- Quick statistics.
+- Four timeline milestones.
+- Engineering impact.
+- Scientific discoveries.
+- Official NASA archive URL.
+- Image source/attribution when available.
+
+Use shared components and data-driven rendering to avoid duplicated code.
+
+---
+
+# 14. IMAGE AND ASSET REQUIREMENTS
+
+Use authentic space imagery.
+
+Prioritize:
+- NASA Image and Video Library.
+- Official NASA mission websites.
+- NASA public-domain mission photographs.
+- Genuine Mars surface photographs.
+- Genuine Apollo and Surveyor photographs.
+
+For images, use appropriate image-source attribution.
+
+NASA Image and Video Library:
+https://images.nasa.gov/
+
+When possible, use its public search endpoints to locate suitable imagery.
+
+Do not depend on a hardcoded temporary image URL or an image URL that requires authentication.
+
+Use suitable image crops, responsive dimensions, and descriptive alt text.
+
+Provide polished fallback visuals if an external image fails to load.
+
+Do not display broken images.
+
+---
+
+# 15. ANIMATION AND MICRO-INTERACTIONS
+
+Add high-quality, performance-conscious animation.
+
+Include:
+
+- Hero text entrance animation.
+- Fade and slide page transitions.
+- Hover elevation on cards.
+- Button hover and press states.
+- Subtle glow effects.
+- Animated progress bars.
+- Achievement unlock animation.
+- Quiz answer selection feedback.
+- Smooth scrolling.
+- Timeline reveal animations.
+- Animated statistics.
+- Loading transitions.
+
+Use Framer Motion where useful.
+
+Animations should be subtle and should not delay essential interactions.
+
+---
+
+# 16. RESPONSIVE DESIGN
+
+The website must work properly at:
+
+- Desktop: 1440px.
+- Laptop: 1280px.
+- Tablet: 768px.
+- Mobile: 390px and smaller.
+
+Requirements:
+
+- Responsive navigation.
+- Responsive hero typography.
+- Cards change grid columns according to available width.
+- No horizontal overflow.
+- Story timelines become vertically stacked on mobile.
+- Certificate remains readable.
+- Buttons remain accessible.
+- Touch interactions work properly.
+- All text remains legible.
+
+Do not simply shrink the desktop layout. Build an intentional responsive design.
+
+---
+
+# 17. ACCESSIBILITY AND PERFORMANCE
+
+Implement:
+
+- Semantic HTML.
+- Correct heading hierarchy.
+- Keyboard-accessible navigation.
+- Visible keyboard focus states.
+- Accessible labels.
+- Appropriate color contrast.
+- Meaningful image alt text.
+- Reduced-motion support.
+- Proper loading and error states.
+
+Performance requirements:
+
+- Lazy-load non-critical images.
+- Avoid unnecessary dependencies.
+- Optimize image sizes.
+- Avoid unnecessary rerenders.
+- Use reusable components.
+- Ensure smooth scrolling and navigation.
+- Avoid console errors.
+
+---
+
+# 18. TESTING AND QUALITY ASSURANCE
+
+Do not assume that the website works simply because the development server starts.
+
+You must test the actual user journey.
+
+Use the available testing framework. If practical, add Playwright end-to-end tests.
+
+### REQUIRED TEST SCENARIO 01 — MAIN MARS JOURNEY
+
+1. Open homepage.
+2. Click BOARD THE RUST & EXPLORE.
+3. Enter Mars Archive.
+4. Open Spirit Rover.
+5. Scroll through the entire historical story.
+6. Verify timeline content.
+7. Open the official NASA archive.
+8. Return to the story.
+9. Complete the mission.
+10. Open the quiz.
+11. Select an incorrect answer.
+12. Verify the incorrect-answer screen.
+13. Click TRY AGAIN.
+14. Select option B.
+15. Verify the correct-answer screen.
+16. Verify WATER DETECTIVE unlocks.
+17. Open Mission Log.
+18. Verify exploration progress.
+19. Open Certificate.
+20. Enter a recipient name.
+21. Verify the name appears on the certificate.
+22. Print the certificate.
+23. Return to Mission Log.
+
+### REQUIRED TEST SCENARIO 02 — LUNAR JOURNEY
+
+1. Open Command Hub.
+2. Enter Lunar Archive.
+3. Open Apollo 11 Descent Stage.
+4. Verify story content.
+5. Return to Lunar Archive.
+6. Open Surveyor 3.
+7. Return to Lunar Archive.
+8. Open Lunar Roving Vehicle.
+9. Verify all three relics are tracked.
+10. Verify LUNAR PIONEER unlocks.
+
+### REQUIRED TEST SCENARIO 03 — ALL SEVEN RELICS
+
+Verify that all seven story routes work.
+
+Verify their historical information, photographs, NASA links, navigation, and progress tracking.
+
+### REQUIRED TEST SCENARIO 04 — DATA PERSISTENCE
+
+1. Explore several relics.
+2. Unlock an achievement.
+3. Enter a certificate recipient name.
+4. Refresh the browser.
+5. Verify all saved information remains intact.
+
+### REQUIRED TEST SCENARIO 05 — RESPONSIVENESS
+
+Test the homepage, archive pages, story pages, quiz, Mission Log, and certificate on desktop and mobile-sized viewports.
+
+Fix all major layout issues.
+
+### REQUIRED TEST SCENARIO 06 — INTERACTION AUDIT
+
+Inspect every button, navigation link, card action, external link, form control, and interactive element.
+
+No decorative element should pretend to be functional.
+
+No button should be left without an action.
+
+---
+
+# 19. FINAL EXECUTION INSTRUCTIONS
+
+Follow this order:
+
+PHASE 1 — Inspect the existing repository and establish the project architecture.
+
+PHASE 2 — Build the visual design system, fonts, navigation, shared components, and global layout.
+
+PHASE 3 — Build the homepage, Command Hub, Mars Archive, and Lunar Archive.
+
+PHASE 4 — Implement all seven data-driven relic story pages with accurate content.
+
+PHASE 5 — Implement the quiz and correct/incorrect branching.
+
+PHASE 6 — Implement LocalStorage progress tracking and achievement unlocking.
+
+PHASE 7 — Implement Mission Log and Certificate.
+
+PHASE 8 — Connect all routes, buttons, interactions, and external NASA links.
+
+PHASE 9 — Implement responsive layouts and animations.
+
+PHASE 10 — Run the application, test the complete journeys, and fix errors.
+
+Do not sacrifice a required feature because another feature is visually impressive.
+
+If time is constrained, build in order of functional importance, but complete every required feature before considering the project finished.
+
+Do not stop after the first successful build.
+
+---
+
+# 20. DEFINITION OF DONE
+
+The project is considered complete ONLY when:
+
+- All 16 original experiences are represented.
+- Both exploration worlds work.
+- All seven relics have their own complete story pages.
+- All timeline sections are populated with accurate information.
+- All official NASA archive links work.
+- All seven relics can be explored.
+- The quiz works.
+- Correct and incorrect branching works.
+- Achievements unlock under the specified conditions.
+- Mission progress updates dynamically.
+- LocalStorage preserves progress.
+- Certificate unlocking works.
+- Certificate personalization works.
+- Certificate printing works.
+- Every navigation button works.
+- Responsive layouts work.
+- No major runtime errors remain.
+- The complete user journey has been tested.
+
+## FINAL RESPONSE REQUIREMENTS
+
+After completing the project, report:
+
+1. What you actually implemented.
+2. The main routes and features.
+3. The files and components created.
+4. How to run the application locally.
+5. What automated tests were executed and their results.
+6. Any specific functionality that could not be completed.
+7. Any NASA sources or external links that could not be verified.
+
+Be transparent. Do not claim a feature is implemented or tested unless it actually is.
+
+**FINAL DIRECTIVE: BUILD THE COMPLETE GHOSTS OF THE VOID WEBSITE NOW. DO NOT RETURN ONLY A PLAN, WIREFRAME, DESIGN MOCKUP, OR STATIC DEMONSTRATION. CREATE THE WORKING APPLICATION.**
